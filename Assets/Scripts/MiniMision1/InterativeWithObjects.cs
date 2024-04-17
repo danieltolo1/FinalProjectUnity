@@ -9,11 +9,11 @@ public class InterativeWithObjects : MonoBehaviour
     public GameObject panel1;
     public Inventory inventory;
     public bool playerNear;
-    private TextMeshProUGUI textMesh;
+    public TextMeshProUGUI textMesh;
     // Start is called before the first frame update
     void Start()
     {
-        textMesh = GetComponent<TextMeshProUGUI>();
+        //textMesh = GetComponent<TextMeshProUGUI>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
@@ -24,6 +24,7 @@ public class InterativeWithObjects : MonoBehaviour
 
             inventory.Cantidad = inventory.Cantidad + 1;
             Destroy(gameObject);
+            textMesh.text = inventory.Cantidad.ToString("0");
             panel1.SetActive(false);
         }
     }
