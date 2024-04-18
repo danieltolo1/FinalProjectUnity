@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PT_Armors_Material
+  m_Name: Enemies_Armors_Material 1
   m_Shader: {fileID: 4800000, guid: 66cf399cd52203c4685e11681d535f09, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -102,17 +102,17 @@ Material:
     - __dirty: 1
     m_Colors:
     - _CLOTH1COLOR: {r: 0.1465379, g: 0.282117, b: 0.3490566, a: 0}
-    - _CLOTH2COLOR: {r: 0, g: 0.013718843, b: 1, a: 0}
+    - _CLOTH2COLOR: {r: 0.25, g: 0, b: 0, a: 0}
     - _CLOTH3COLOR: {r: 0.8773585, g: 0.6337318, b: 0.3434941, a: 0}
     - _COATOFARMSCOLOR: {r: 1, g: 0, b: 0, a: 0}
     - _EYESCOLOR: {r: 0.0734529, g: 0.1320755, b: 0.05046281, a: 1}
-    - _FEATHERS1COLOR: {r: 0, g: 0.0028661403, b: 0.23584908, a: 0}
-    - _FEATHERS2COLOR: {r: 0, g: 0.0042743683, b: 1, a: 0}
-    - _FEATHERS3COLOR: {r: 0, g: 0.1793142, b: 0.7264151, a: 0}
+    - _FEATHERS1COLOR: {r: 0.23529412, g: 0, b: 0.007274852, a: 0}
+    - _FEATHERS2COLOR: {r: 1, g: 0.023192735, b: 0, a: 0}
+    - _FEATHERS3COLOR: {r: 0.7254902, g: 0, b: 0, a: 0}
     - _GEMS1COLOR: {r: 0.3773585, g: 0, b: 0.06650025, a: 0}
     - _GEMS2COLOR: {r: 0.2023368, g: 0, b: 0.4339623, a: 0}
     - _GEMS3COLOR: {r: 0, g: 0.1132075, b: 0.01206957, a: 0}
-    - _HAIRCOLOR: {r: 0.5943396, g: 0.3518379, b: 0.1093361, a: 0}
+    - _HAIRCOLOR: {r: 0, g: 0, b: 0, a: 0}
     - _LEATHER1COLOR: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
     - _LEATHER2COLOR: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
     - _LEATHER3COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
