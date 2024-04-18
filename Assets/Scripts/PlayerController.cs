@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform cameraRightShoulder; // Eje de la cámara
     public Transform cameraHolder; // Movimiento de la cámara con respecto al personaje (posición, rotación)
-    private Transform cam;    
+    private Transform cam;
 
     public float rotationSpeed = 200;
     public float minAngle = -45;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     private Vector2 animSpeed;
 
-    
+
     void Start()
     {
         playerTr = transform;
@@ -59,10 +59,10 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    
+
     void Update()
     {
-        MoveControl();        
+        MoveControl();
         ActionsControl();
         CameraControl();
         AnimControl();
@@ -90,41 +90,41 @@ public class PlayerController : MonoBehaviour
     }
 
     public void MoveControl()
-     {
+    {
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
-        deltaT = Time.deltaTime;        
+        deltaT = Time.deltaTime;
 
-        animSpeed = new Vector2(moveX, moveZ);       
+        animSpeed = new Vector2(moveX, moveZ);
 
         side = walkSpeed * moveX * deltaT * playerTr.right;
-        forward = walkSpeed * moveZ * deltaT * playerTr.forward; 
+        forward = walkSpeed * moveZ * deltaT * playerTr.forward;
 
         direction = side + forward;
-       
+
         playerRb.velocity = direction;
 
-     }
+    }
 
-     public void ActionsControl()
-     {
+    public void ActionsControl()
+    {
         //Saltar
         jump = Input.GetKey(KeyCode.Space);
 
-        if (isOnGround) 
+        if (isOnGround)
         {
             if (jump)
             {
                 playerRb.AddForce(transform.up * jumpForce);
             }
         }
-     }
+    }
 
-     public void AnimControl()
-     {
+    public void AnimControl()
+    {
         anim.SetBool("ground", isOnGround);
         anim.SetFloat("X", animSpeed.x);
         anim.SetFloat("Y", animSpeed.y);
-     }
+    }
 
 }
