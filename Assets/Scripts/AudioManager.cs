@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this);
         }
@@ -29,13 +29,23 @@ public class AudioManager : MonoBehaviour
     {
         //Para reproducir el sonido que se le pasa por argumentos.
         sfxAudioSource.PlayOneShot(clip);
-    } 
+    }
 
     //Metodo para mutear o activar sonido.
 
     private void ToggleMusic()
     {
         musicAudioSource.mute = !musicAudioSource.mute;
+    }
+
+    public void ButtonMuteSountrack()
+    {
+        musicAudioSource.mute = !musicAudioSource.mute;
+    }
+
+    public void ButtonMutesfxAudioSource()
+    {
+        sfxAudioSource.mute = !sfxAudioSource.mute;
     }
 
     //LLamo el metodo para que mientrastanto lo reconozca por una tecla.
