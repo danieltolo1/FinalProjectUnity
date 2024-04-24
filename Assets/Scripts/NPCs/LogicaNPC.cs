@@ -18,6 +18,9 @@ public class LogicaNPC : MonoBehaviour
     public bool aceptarMision;
     public GameObject botonDeMision;
 
+    public GameObject[] ObjetosMision1;
+    public GameObject[] PanelesMision1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,5 +89,19 @@ public class LogicaNPC : MonoBehaviour
     {
         panelNPCConversation3.SetActive(false);
         panelNPCStarConversation.SetActive(true);
+    }
+
+    public void SiOption()
+    {
+        panelNPCConversation3.SetActive(false);
+        aceptarMision = true;
+        for (int i = 0; i < ObjetosMision1.Length; i++)
+        {
+            ObjetosMision1[i].SetActive(true);
+        }
+        for (int i = 0; i < PanelesMision1.Length; i++)
+        {
+            PanelesMision1[i].SetActive(true);
+        }
     }
 }
