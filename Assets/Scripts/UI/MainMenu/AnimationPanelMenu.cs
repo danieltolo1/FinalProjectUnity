@@ -15,6 +15,7 @@ public class AnimationPanelMenu : MonoBehaviour
     [SerializeField] private GameObject buttonText2;
     [SerializeField] private GameObject buttonText3;
     [SerializeField] private GameObject buttonText4;
+    [SerializeField] private GameObject buttonSkip;
 
 
 
@@ -22,6 +23,7 @@ public class AnimationPanelMenu : MonoBehaviour
     private void Start()
     {
         BajarAlpha(panelGroup, 0f, 0f, 0f);
+        panelGroup.SetActive(false);
         SubirAlpha(panelGroup, 0.85f, 3f, 46.5f);
         ChangeAlphaText(buttonText1, 0f, 0f, 0f, 0f);
         ChangeAlphaText(buttonText1, 0f, 1f, 3f, 47f);
@@ -31,10 +33,9 @@ public class AnimationPanelMenu : MonoBehaviour
         ChangeAlphaText(buttonText3, 0f, 1f, 3f, 47f);
         ChangeAlphaText(buttonText4, 0f, 0f, 0f, 0f);
         ChangeAlphaText(buttonText4, 0f, 1f, 3f, 47f);
+        StartCoroutine("DelayUnsetButtonskip");
 
     }
-
-
 
 
 
@@ -58,6 +59,9 @@ public class AnimationPanelMenu : MonoBehaviour
         LeanTween.value(text, data1, estat, StAnimation).setOnUpdate(UpdateTextAlpha).setDelay(delayTime);
     }
 
+
+
+
     private void UpdateTextAlpha(float alpha)
     {
         Color color = buttonText1.GetComponent<TextMeshProUGUI>().color;
@@ -72,6 +76,14 @@ public class AnimationPanelMenu : MonoBehaviour
         Color color4 = buttonText4.GetComponent<TextMeshProUGUI>().color;
         color4.a = alpha;
         buttonText4.GetComponent<TextMeshProUGUI>().color = color;
+    }
+
+    public IEnumerator DelayUnsetButtonskip()
+    {
+        yield return new WaitForSeconds(44f);
+        buttonSkip.SetActive(false);
+        panelGroup.SetActive(true);
+
     }
 
 
