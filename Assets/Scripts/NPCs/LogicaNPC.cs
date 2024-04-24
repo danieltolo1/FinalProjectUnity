@@ -32,6 +32,8 @@ public class LogicaNPC : MonoBehaviour
         {
             panelNPCStarConversation.SetActive(false);
             panelNPCConversation1.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -45,6 +47,7 @@ public class LogicaNPC : MonoBehaviour
             {
                 panelNPCStarConversation.SetActive(true);
 
+
             }
         }
 
@@ -57,6 +60,8 @@ public class LogicaNPC : MonoBehaviour
             jugadorCerca = false;
             panelNPCStarConversation.SetActive(false);
             panelNPCConversation1.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
 
         }
     }
