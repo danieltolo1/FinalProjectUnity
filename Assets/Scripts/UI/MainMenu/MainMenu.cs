@@ -13,6 +13,11 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void ChangeMenu(string NameLevel)
+    {
+        SceneManager.LoadScene(NameLevel);
+    }
+
     public void ButtonSound()
     {
         AudioManager.Instance.PlaySound(starSound);
