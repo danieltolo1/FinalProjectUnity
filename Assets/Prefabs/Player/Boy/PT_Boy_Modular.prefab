@@ -1528,18 +1528,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822d2fbfa0fdd09419d924b29316af10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  jumpForce: 10
-  gravityForce: 6
+  speed: 4
+  jumpForce: 50
+  gravityForce: 15
   isOnGround: 0
-  mouseX: 0
-  mouseY: 0
-  cameraRightShoulder: {fileID: 1292402451}
-  cameraHolder: {fileID: 566816584}
-  rotationSpeed: 40
-  minAngle: -45
-  maxAngle: 45
-  cameraSpeed: 5
 --- !u!1 &3208569177431830418
 GameObject:
   m_ObjectHideFlags: 0

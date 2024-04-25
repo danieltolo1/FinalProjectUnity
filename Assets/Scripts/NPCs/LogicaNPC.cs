@@ -24,7 +24,7 @@ public class LogicaNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        simboloMision.SetActive(true);
+        //simboloMision.SetActive(true);
         panelNPCStarConversation.SetActive(false);
     }
 
