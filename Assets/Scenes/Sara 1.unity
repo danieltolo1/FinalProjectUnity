@@ -1624,7 +1624,7 @@ MonoBehaviour:
   distance: 5
   rotationX: 0
   rotationY: 0
-  minAngle: -10
+  minAngle: -5
   maxAngle: 45
   framingOffset: {x: 0, y: 0}
   invertX: 0
