@@ -9,16 +9,16 @@ public class TestController : MonoBehaviour
 {
     Rigidbody playerRb;
     Transform playerTr;
-    Vector3 velocity;
+    public Vector3 velocity;
     private float moveX;
-    private float moveZ;
+    public float moveZ;
     public float speed;
     public float jumpForce;
     private float distanceToGround;
 
     public int gravityForce = 0;
     public bool isOnGround;
-    
+
     // Animaciones 
 
     Animator anim;
@@ -31,38 +31,38 @@ public class TestController : MonoBehaviour
 
 
 
-    private void Awake() 
+    private void Awake()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
     }
-    
+
     void Start()
     {
-        playerTr = transform;        
+        playerTr = transform;
         playerRb = GetComponent<Rigidbody>();
         distanceToGround = GetComponent<Collider>().bounds.extents.y;
 
         anim = GetComponent<Animator>();
     }
 
-   
-    private void FixedUpdate() 
+
+    private void FixedUpdate()
     {
-        MoveControl();  
+        MoveControl();
         Jumping();
-        AnimControl();             
+        AnimControl();
     }
 
-    private void MoveControl()
+    public void MoveControl()
     {
-        moveX = Input.GetAxis("Horizontal");
+        //moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
 
         if (moveX != 0 || moveZ != 0)
         {
             // Obtiene la dirección de la cámara en el plano horizontal
             Vector3 cameraForward = Vector3.Scale(cameraController.transform.forward, new Vector3(1, 0, 1)).normalized;
-            
+
             // Dirección del movimiento según la entrada y la cámara
             Vector3 desiredDirection = (cameraForward * moveZ + cameraController.transform.right * moveX).normalized;
 
@@ -82,38 +82,50 @@ public class TestController : MonoBehaviour
         velocity.y = playerRb.velocity.y;
         playerRb.velocity = velocity;
     }
+
+
+
+
+
+
+
+
+
+
     private bool IsGrounded()
     {
-       //return Physics.BoxCast(transform.position, new Vector3(0.4f, 0f, 0.4f), Vector3.down, Quaternion.identity, distanceToGround + 0.1f);
+        //return Physics.BoxCast(transform.position, new Vector3(0.4f, 0f, 0.4f), Vector3.down, Quaternion.identity, distanceToGround + 0.1f);
 
-      // Crea un objeto RaycastHit para obtener información sobre la colisión
-          RaycastHit hit;
+        // Crea un objeto RaycastHit para obtener información sobre la colisión
+        RaycastHit hit;
 
-      // Define el origen del rayo y la distancia
-          Vector3 origin = transform.position;
-          float distance = distanceToGround + 0.1f;
-          Vector3 direction = Vector3.down;
+        // Define el origen del rayo y la distancia
+        Vector3 origin = transform.position;
+        float distance = distanceToGround + 0.1f;
+        Vector3 direction = Vector3.down;
 
-      // Dibuja el rayo para su visualización
-          Debug.DrawRay(origin, direction * distance, Color.red, 0.5f);  // 0.5 segundos de duración
+        // Dibuja el rayo para su visualización
+        Debug.DrawRay(origin, direction * distance, Color.red, 0.5f);  // 0.5 segundos de duración
 
-      // Ejecuta el RayCast hacia abajo desde la posición del objeto
-          bool isHit = Physics.Raycast(origin, Vector3.down, out hit, distance);
+        // Ejecuta el RayCast hacia abajo desde la posición del objeto
+        bool isHit = Physics.Raycast(origin, Vector3.down, out hit, distance);
 
-      // Retornar true si hay colisión
-          return isHit;
+        // Retornar true si hay colisión
+        return isHit;
     }
 
     private void Jumping()
     {
-        if(Input.GetButtonDown("Jump") && IsGrounded()) 
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-           playerRb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
-           isOnGround = IsGrounded() == true;  
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround = IsGrounded() == true;
 
-        } else {
-           GravityForce();
-           isOnGround = IsGrounded() == false;         
+        }
+        else
+        {
+            GravityForce();
+            isOnGround = IsGrounded() == false;
         }
     }
 
@@ -122,10 +134,10 @@ public class TestController : MonoBehaviour
         playerRb.AddForce(gravityForce * Physics.gravity);
     }
 
-     public void AnimControl()
+    public void AnimControl()
     {
         animSpeed = new Vector2(moveX, moveZ);
-        anim.SetBool("ground", isOnGround);        
+        anim.SetBool("ground", isOnGround);
         anim.SetFloat("X", animSpeed.x);
         anim.SetFloat("Y", animSpeed.y);
     }
