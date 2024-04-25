@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45104897, g: 0.50088114, b: 0.57419884, a: 1}
+  m_IndirectSpecularColor: {r: 0.4510495, g: 0.5008817, b: 0.57419974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -982,6 +982,8 @@ MonoBehaviour:
   jugadorCerca: 0
   aceptarMision: 0
   botonDeMision: {fileID: 0}
+  testController: {fileID: 1584094113}
+  cameraController: {fileID: 1666107154}
   ObjetosMision1:
   - {fileID: 87146244}
   - {fileID: 1019181198}
@@ -1411,6 +1413,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
   m_PrefabInstance: {fileID: 594226979}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584094113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5610055313547872312, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
+  m_PrefabInstance: {fileID: 594226979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822d2fbfa0fdd09419d924b29316af10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1588072424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1620,7 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followPlayer: {fileID: 1584094112}
-  rotationSpeed: 2
+  rotationSpeed: 1.5
   distance: 5
   rotationX: 0
   rotationY: 0

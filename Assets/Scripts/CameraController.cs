@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-   [SerializeField] Transform followPlayer;
-   [SerializeField] private float rotationSpeed = 2f;
-   [SerializeField] private float distance = 5;
-   [SerializeField] private float rotationX;
-   [SerializeField] private float rotationY;
-   float invertXVal;
-   float invertYVal;
-   [SerializeField] private float minAngle = -20;
-   [SerializeField] private float maxAngle = 45;
-   [SerializeField] Vector2 framingOffset;
-   [SerializeField] bool invertX;
-   [SerializeField] bool invertY;
+    [SerializeField] Transform followPlayer;
+    [SerializeField] public float rotationSpeed = 2f;
+    [SerializeField] private float distance = 5;
+    [SerializeField] public float rotationX;
+    [SerializeField] public float rotationY;
+    float invertXVal;
+    float invertYVal;
+    [SerializeField] private float minAngle = -20;
+    [SerializeField] private float maxAngle = 45;
+    [SerializeField] Vector2 framingOffset;
+    [SerializeField] bool invertX;
+    [SerializeField] bool invertY;
 
-   
+
 
 
 
@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    
+
     void Update()
     {
         invertXVal = invertX ? -1 : 1;
@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
 
         rotationX += Input.GetAxis("Mouse Y") * invertYVal * rotationSpeed;
         rotationX = Mathf.Clamp(rotationX, minAngle, maxAngle);
-        
+
         rotationY += Input.GetAxis("Mouse X") * invertXVal * rotationSpeed;
 
         var playerRotation = Quaternion.Euler(rotationX, rotationY, 0);
@@ -46,5 +46,5 @@ public class CameraController : MonoBehaviour
     }
 
 
-    public Quaternion PlanarRotation => Quaternion.Euler(0, rotationY,0);
+    public Quaternion PlanarRotation => Quaternion.Euler(0, rotationY, 0);
 }

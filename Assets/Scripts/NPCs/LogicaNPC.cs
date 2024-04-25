@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
 
+
 public class LogicaNPC : MonoBehaviour
 {
     public GameObject simboloMision;
@@ -18,6 +19,9 @@ public class LogicaNPC : MonoBehaviour
     public bool aceptarMision;
     public GameObject botonDeMision;
 
+    public TestController testController;
+    public CameraController cameraController;
+
     public GameObject[] ObjetosMision1;
     public GameObject[] PanelesMision1;
 
@@ -25,18 +29,27 @@ public class LogicaNPC : MonoBehaviour
     void Start()
     {
         //simboloMision.SetActive(true);
+        testController = GameObject.FindGameObjectWithTag("Payer").GetComponent<TestController>();
         panelNPCStarConversation.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && aceptarMision == false)
+        if (Input.GetKeyDown(KeyCode.Q) && aceptarMision == false && jugadorCerca == true)
         {
+            Vector3 posicionJugador = new Vector3(transform.position.x, testController.gameObject.transform.position.y, transform.position.z);
+            testController.gameObject.transform.LookAt(posicionJugador);
             panelNPCStarConversation.SetActive(false);
             panelNPCConversation1.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            testController.speed = 0;
+            cameraController.rotationSpeed = 0;
+
+
+            //testController.moveZ = 0;
+
         }
     }
 
@@ -89,12 +102,16 @@ public class LogicaNPC : MonoBehaviour
     {
         panelNPCConversation3.SetActive(false);
         panelNPCStarConversation.SetActive(true);
+        testController.speed = 4;
+        cameraController.rotationSpeed = 1.5f;
     }
 
     public void SiOption()
     {
         panelNPCConversation3.SetActive(false);
         aceptarMision = true;
+        testController.speed = 4;
+        cameraController.rotationSpeed = 1.5f;
         for (int i = 0; i < ObjetosMision1.Length; i++)
         {
             ObjetosMision1[i].SetActive(true);
