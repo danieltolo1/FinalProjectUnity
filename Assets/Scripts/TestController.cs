@@ -26,28 +26,19 @@ public class TestController : MonoBehaviour
 
     // Movimiento de la Cámara
 
-    public float mouseX;
-    public float mouseY;
-    private float deltaT;
-
-    private float rotY = 0f;
-    private float rotX;
-
-    public Transform cameraRightShoulder; // Eje de la cámara
-    public Transform cameraHolder; // Movimiento de la cámara con respecto al personaje (posición, rotación)
-    private Transform cam;
-
-    public float rotationSpeed = 200;
-    public float minAngle = -45;
-    public float maxAngle = 45;
-    public float cameraSpeed = 200;
+    CameraController cameraController;
 
 
 
+
+    private void Awake() 
+    {
+        cameraController = Camera.main.GetComponent<CameraController>();
+    }
+    
     void Start()
     {
-        playerTr = transform;
-        cam = Camera.main.transform;
+        playerTr = transform;        
         playerRb = GetComponent<Rigidbody>();
         distanceToGround = GetComponent<Collider>().bounds.extents.y;
 
@@ -59,60 +50,43 @@ public class TestController : MonoBehaviour
     {
         MoveControl();  
         Jumping();
-        AnimControl();    
-        //CameraControl();              
-          
-    }
-
-    private void LateUpdate()
-    {
-        
-    }
-
-        public void CameraControl()
-    {
-        mouseX = Input.GetAxis("Mouse X");
-        mouseY = Input.GetAxis("Mouse Y");
-        deltaT = Time.deltaTime;
-
-        //rotY += mouseY * rotationSpeed * deltaT;
-
-        rotX = mouseX * rotationSpeed * deltaT;
-
-        playerTr.Rotate(0, rotX, 0);
-
-        rotY = Mathf.Clamp(rotY, minAngle, maxAngle);
-
-        Quaternion localRotation = Quaternion.Euler(-rotY, 0, 0);
-        cameraRightShoulder.localRotation = localRotation;
-
-        cam.position = Vector3.Lerp(cam.position, cameraHolder.position, cameraSpeed * deltaT);
-        cam.rotation = Quaternion.Lerp(cam.rotation, cameraHolder.rotation, cameraSpeed * deltaT);
+        AnimControl();             
     }
 
     private void MoveControl()
     {
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
-       
 
-        if(moveX != 0 || moveZ != 0)
+        if (moveX != 0 || moveZ != 0)
         {
-           Vector3 motion = (transform.forward * moveZ + transform.right * moveX).normalized * speed;
-           velocity = motion;
-        } else {
-           velocity = Vector3.zero;
-        } 
+            // Obtiene la dirección de la cámara en el plano horizontal
+            Vector3 cameraForward = Vector3.Scale(cameraController.transform.forward, new Vector3(1, 0, 1)).normalized;
+            
+            // Dirección del movimiento según la entrada y la cámara
+            Vector3 desiredDirection = (cameraForward * moveZ + cameraController.transform.right * moveX).normalized;
 
-        velocity.y = playerRb.velocity.y;                  
+            // Rotación del jugador 
+            playerTr.rotation = Quaternion.LookRotation(desiredDirection);
+
+            // Movimiento del jugador
+            Vector3 motion = desiredDirection * speed;
+            velocity = motion;
+        }
+        else
+        {
+            velocity = Vector3.zero;
+        }
+
+        // Mantiene la velocidad en Y del Rigidbody
+        velocity.y = playerRb.velocity.y;
         playerRb.velocity = velocity;
     }
-
     private bool IsGrounded()
     {
        //return Physics.BoxCast(transform.position, new Vector3(0.4f, 0f, 0.4f), Vector3.down, Quaternion.identity, distanceToGround + 0.1f);
 
-      // Crear un objeto RaycastHit para obtener información sobre la colisión
+      // Crea un objeto RaycastHit para obtener información sobre la colisión
           RaycastHit hit;
 
       // Define el origen del rayo y la distancia
@@ -121,7 +95,7 @@ public class TestController : MonoBehaviour
           Vector3 direction = Vector3.down;
 
       // Dibuja el rayo para su visualización
-          Debug.DrawRay(origin, direction * distance, Color.red, 0.5f);  // 2 segundos de duración
+          Debug.DrawRay(origin, direction * distance, Color.red, 0.5f);  // 0.5 segundos de duración
 
       // Ejecuta el RayCast hacia abajo desde la posición del objeto
           bool isHit = Physics.Raycast(origin, Vector3.down, out hit, distance);
