@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
+using System;
 
 
 public class LogicaNPC : MonoBehaviour
@@ -13,6 +14,7 @@ public class LogicaNPC : MonoBehaviour
     public GameObject panelNPCConversation1;
     public GameObject panelNPCConversation2;
     public GameObject panelNPCConversation3;
+
     public GameObject panelNPCMision;
     public TextMeshProUGUI textoMision;
     public bool jugadorCerca;
@@ -28,8 +30,8 @@ public class LogicaNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //simboloMision.SetActive(true);
-        testController = GameObject.FindGameObjectWithTag("Payer").GetComponent<TestController>();
+        simboloMision.SetActive(true);
+        testController = GameObject.FindGameObjectWithTag("Player").GetComponent<TestController>();
         panelNPCStarConversation.SetActive(false);
     }
 
@@ -109,16 +111,26 @@ public class LogicaNPC : MonoBehaviour
     public void SiOption()
     {
         panelNPCConversation3.SetActive(false);
+        panelNPCMision.SetActive(true);
         aceptarMision = true;
+
+
+
+    }
+
+    public void StartMision1()
+    {
+        panelNPCMision.SetActive(false);
         testController.speed = 4;
         cameraController.rotationSpeed = 1.5f;
-        for (int i = 0; i < ObjetosMision1.Length; i++)
-        {
-            ObjetosMision1[i].SetActive(true);
-        }
         for (int i = 0; i < PanelesMision1.Length; i++)
         {
             PanelesMision1[i].SetActive(true);
         }
+        for (int i = 0; i < ObjetosMision1.Length; i++)
+        {
+            ObjetosMision1[i].SetActive(true);
+        }
+
     }
 }
