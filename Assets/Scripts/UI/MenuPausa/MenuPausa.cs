@@ -30,6 +30,9 @@ public class MenuPausa : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 testController.speed = 0;
                 cameraController.rotationSpeed = 0;
+                testController.gravityForce = 15;
+                testController.isOnGround = false;
+
             }
             else if (Pausa == true)
             {
