@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public GameObject ObjetoMenuPausa;
+    public TestController testController;
+    public CameraController cameraController;
+
     public bool Pausa = false;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class MenuPausa : MonoBehaviour
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                testController.speed = 0;
+                cameraController.rotationSpeed = 0;
             }
             else if (Pausa == true)
             {
@@ -42,6 +47,8 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        testController.speed = 4;
+        cameraController.rotationSpeed = 1.5f;
     }
 
     public void goToMenu(string MenuName)

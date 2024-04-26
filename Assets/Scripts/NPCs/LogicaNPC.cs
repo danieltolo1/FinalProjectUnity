@@ -50,7 +50,7 @@ public class LogicaNPC : MonoBehaviour
             cameraController.rotationSpeed = 0;
 
 
-            //testController.moveZ = 0;
+
 
         }
     }
