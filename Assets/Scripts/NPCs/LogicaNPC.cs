@@ -14,6 +14,7 @@ public class LogicaNPC : MonoBehaviour
     public GameObject panelNPCConversation1;
     public GameObject panelNPCConversation2;
     public GameObject panelNPCConversation3;
+    public Inventory inventory;
 
     public GameObject panelNPCMision;
     public TextMeshProUGUI textoMision;
@@ -48,9 +49,15 @@ public class LogicaNPC : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             testController.speed = 0;
             cameraController.rotationSpeed = 0;
+        }
 
-
-
+        if (inventory.Cantidad == 4)
+        {
+            Debug.Log("lOGRE LA MISION");
+            for (int i = 0; i < PanelesMision1.Length; i++)
+            {
+                PanelesMision1[i].SetActive(false);
+            }
 
         }
     }
@@ -131,6 +138,8 @@ public class LogicaNPC : MonoBehaviour
         {
             ObjetosMision1[i].SetActive(true);
         }
+
+
 
     }
 }

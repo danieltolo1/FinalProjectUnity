@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel1: {fileID: 1903029144}
-  inventory: {fileID: 1584094114}
+  inventory: {fileID: 1584094118}
   playerNear: 0
   textMesh: {fileID: 2022193147}
 --- !u!135 &852788933
@@ -1411,6 +1411,7 @@ MonoBehaviour:
   panelNPCConversation1: {fileID: 569196088}
   panelNPCConversation2: {fileID: 163787286}
   panelNPCConversation3: {fileID: 438601761}
+  inventory: {fileID: 1584094118}
   panelNPCMision: {fileID: 912096309}
   textoMision: {fileID: 0}
   jugadorCerca: 0
@@ -1973,7 +1974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel1: {fileID: 1903029144}
-  inventory: {fileID: 1584094114}
+  inventory: {fileID: 1584094118}
   playerNear: 0
   textMesh: {fileID: 2022193147}
 --- !u!135 &1185406380
@@ -2244,7 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822d2fbfa0fdd09419d924b29316af10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1584094114
+--- !u!114 &1584094118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2851,7 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel1: {fileID: 1903029144}
-  inventory: {fileID: 1584094114}
+  inventory: {fileID: 1584094118}
   playerNear: 0
   textMesh: {fileID: 2022193147}
 --- !u!135 &1763381742
@@ -2885,7 +2886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel1: {fileID: 1903029144}
-  inventory: {fileID: 1584094114}
+  inventory: {fileID: 1584094118}
   playerNear: 0
   textMesh: {fileID: 2022193147}
 --- !u!135 &1892187924
