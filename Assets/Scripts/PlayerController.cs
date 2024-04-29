@@ -1,128 +1,122 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Movimiento Player
-
-    Transform playerTr;
     Rigidbody playerRb;
-
+    Transform playerTr;
+    Vector3 velocity;
     private float moveX;
     private float moveZ;
-    private float deltaT;
-    public float gravityModifier;
+    public float speed;
+    public float jumpForce;
+    private float distanceToGround;
 
-    Vector3 direction;
-    Vector3 side;
-    Vector3 forward;
-
-    public float walkSpeed = 200;
-    public float jumpForce = 25000;
+    public int gravityForce = 0;
     public bool isOnGround;
-    public bool jump;
-    public GameObject triggerJump;
-
-    // Movimiento de la Cámara
-
-    public float mouseX;
-    public float mouseY;
-    private float rotY = 0f;
-    private float rotX;
-
-    public Transform cameraRightShoulder; // Eje de la cámara
-    public Transform cameraHolder; // Movimiento de la cámara con respecto al personaje (posición, rotación)
-    private Transform cam;
-
-    public float rotationSpeed = 200;
-    public float minAngle = -45;
-    public float maxAngle = 45;
-    public float cameraSpeed = 200;
-
+    
     // Animaciones 
-
     Animator anim;
     private Vector2 animSpeed;
 
+    // Movimiento de la Cámara
+    CameraController cameraController;
 
+    private void Awake() 
+    {
+        cameraController = Camera.main.GetComponent<CameraController>();
+    }
+    
     void Start()
     {
-        playerTr = transform;
-        cam = Camera.main.transform;
-
+        playerTr = transform;        
         playerRb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier;
+        distanceToGround = GetComponent<Collider>().bounds.extents.y;
 
         anim = GetComponent<Animator>();
     }
 
-
-    void Update()
+   
+    private void FixedUpdate() 
     {
-        MoveControl();
-        ActionsControl();
-        CameraControl();
-        AnimControl();
+        MoveControl();  
+        Jumping();
+        AnimControl();             
     }
 
-    public void CameraControl()
-    {
-        mouseX = Input.GetAxis("Mouse X");
-        mouseY = Input.GetAxis("Mouse Y");
-        deltaT = Time.deltaTime;
-
-        rotY += mouseY * rotationSpeed * deltaT;
-
-        rotX = mouseX * rotationSpeed * deltaT;
-
-        playerTr.Rotate(0, rotX, 0);
-
-        rotY = Mathf.Clamp(rotY, minAngle, maxAngle);
-
-        Quaternion localRotation = Quaternion.Euler(-rotY, 0, 0);
-        cameraRightShoulder.localRotation = localRotation;
-
-        cam.position = Vector3.Lerp(cam.position, cameraHolder.position, cameraSpeed * deltaT);
-        cam.rotation = Quaternion.Lerp(cam.rotation, cameraHolder.rotation, cameraSpeed * deltaT);
-    }
-
-    public void MoveControl()
+    private void MoveControl()
     {
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
-        deltaT = Time.deltaTime;
 
-        animSpeed = new Vector2(moveX, moveZ);
+        if (moveX != 0 || moveZ != 0)
+        {
+            // Obtiene la dirección de la cámara en el plano horizontal
+            Vector3 cameraForward = Vector3.Scale(cameraController.transform.forward, new Vector3(1, 0, 1)).normalized;
+            
+            // Dirección del movimiento según la entrada y la cámara
+            Vector3 desiredDirection = (cameraForward * moveZ + cameraController.transform.right * moveX).normalized;
 
-        side = walkSpeed * moveX * deltaT * playerTr.right;
-        forward = walkSpeed * moveZ * deltaT * playerTr.forward;
+            // Rotación del jugador 
+            playerTr.rotation = Quaternion.LookRotation(desiredDirection);
 
-        direction = side + forward;
+            // Movimiento del jugador
+            Vector3 motion = desiredDirection * speed;
+            velocity = motion;
+        }
+        else
+        {
+            velocity = Vector3.zero;
+        }
 
-        playerRb.velocity = direction;
+        // Mantiene la velocidad en Y del Rigidbody
+        velocity.y = playerRb.velocity.y;
+        playerRb.velocity = velocity;
+    }
+    private bool IsGrounded()
+    {
+      // Crea un objeto RaycastHit para obtener información sobre la colisión
+          RaycastHit hit;
 
+      // Define el origen del rayo y la distancia
+          Vector3 origin = transform.position;
+          float distance = distanceToGround + 0.1f;
+          Vector3 direction = Vector3.down;
+
+      // Dibuja el rayo para su visualización
+          Debug.DrawRay(origin, direction * distance, Color.red, 0.5f);  // 0.5 segundos de duración
+
+      // Ejecuta el RayCast hacia abajo desde la posición del objeto
+          bool isHit = Physics.Raycast(origin, Vector3.down, out hit, distance);
+
+      // Retornar true si hay colisión
+          return isHit;
     }
 
-    public void ActionsControl()
+    private void Jumping()
     {
-        //Saltar
-        jump = Input.GetKey(KeyCode.Space);
-
-        if (isOnGround)
+        if(Input.GetButtonDown("Jump") && IsGrounded()) 
         {
-            if (jump)
-            {
-                playerRb.AddForce(transform.up * jumpForce);
-            }
+           playerRb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
+           isOnGround = IsGrounded() == true;  
+
+        } else {
+           GravityForce();
+           isOnGround = IsGrounded() == false;         
         }
     }
 
-    public void AnimControl()
+    private void GravityForce()
     {
-        anim.SetBool("ground", isOnGround);
+        playerRb.AddForce(gravityForce * Physics.gravity);
+    }
+
+     public void AnimControl()
+    {
+        animSpeed = new Vector2(moveX, moveZ);
+        anim.SetBool("ground", isOnGround);        
         anim.SetFloat("X", animSpeed.x);
         anim.SetFloat("Y", animSpeed.y);
     }

@@ -496,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8856596973876742836
 Transform:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7637839219488592372
 Transform:
   m_ObjectHideFlags: 0
@@ -1435,7 +1435,6 @@ GameObject:
   - component: {fileID: 4999199286747026641}
   - component: {fileID: 8518520355777049265}
   - component: {fileID: 5610055313547872312}
-  - component: {fileID: 1735687455}
   m_Layer: 0
   m_Name: PT_Boy_Modular
   m_TagString: Untagged
@@ -1529,37 +1528,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822d2fbfa0fdd09419d924b29316af10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  jumpForce: 10
-  gravityForce: 6
+  speed: 4
+  jumpForce: 50
+  gravityForce: 15
   isOnGround: 0
-  mouseX: 0
-  mouseY: 0
-  cameraRightShoulder: {fileID: 1292402451}
-  cameraHolder: {fileID: 566816584}
-  rotationSpeed: 40
-  minAngle: -45
-  maxAngle: 45
-  cameraSpeed: 5
---- !u!114 &1735687455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3142423308109869681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069d9d423855b2a46b80e5292faa7104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 2366626167793625291}
-  cameraRightShoulder: {fileID: 1292402451}
-  cameraHolder: {fileID: 566816584}
-  rotationSpeed: 200
-  minAngle: -45
-  maxAngle: 45
-  cameraSpeed: 200
 --- !u!1 &3208569177431830418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,7 +3725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2656357578123254597
 Transform:
   m_ObjectHideFlags: 0
