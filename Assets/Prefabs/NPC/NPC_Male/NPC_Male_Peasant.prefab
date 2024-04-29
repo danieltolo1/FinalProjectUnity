@@ -304,7 +304,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 16f8230a474671c4e8dd46ea821180d8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velMov: 1
   velRot: 40
-  tiempoReaccion: 5
+  tiempoReaccion: 8
 --- !u!1 &606889751741791946
 GameObject:
   m_ObjectHideFlags: 0
