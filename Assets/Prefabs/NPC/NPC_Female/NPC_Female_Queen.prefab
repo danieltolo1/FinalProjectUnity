@@ -2153,6 +2153,7 @@ GameObject:
   - component: {fileID: 6067097570974364838}
   - component: {fileID: 982057743410283264}
   - component: {fileID: 128896923085605547}
+  - component: {fileID: 6478533595347488359}
   m_Layer: 0
   m_Name: NPC_Female_Queen
   m_TagString: Untagged
@@ -2220,7 +2221,7 @@ Animator:
   m_GameObject: {fileID: 6656904543296883307}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ed32f375cf0deb047840f00665ccc419, type: 3}
-  m_Controller: {fileID: 9100000, guid: 6e9f7d23aaf9b4a4aa92311f4d6fd929, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16f8230a474671c4e8dd46ea821180d8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2231,6 +2232,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6478533595347488359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6656904543296883307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32831c73ac4897443849e4f6072900f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velMov: 1
+  velRot: 40
+  tiempoReaccion: 8
 --- !u!1 &6807744813677012902
 GameObject:
   m_ObjectHideFlags: 0
