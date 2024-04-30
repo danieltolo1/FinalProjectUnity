@@ -1603,6 +1603,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &547628293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 500631173208725210, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
+  m_PrefabInstance: {fileID: 1417486560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563902010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,6 +3211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32831c73ac4897443849e4f6072900f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hablarSonido: {fileID: 0}
   velMov: 1
   velRot: 40
   tiempoReaccion: 8
@@ -3806,6 +3812,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1369631685}
     m_Modifications:
+    - target: {fileID: 568450090, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
+      propertyPath: hablarSonido
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a59d625dd097604b921c7020f1f5669, type: 3}
     - target: {fileID: 500631173208725210, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
       propertyPath: m_Name
       value: HombreNPCmovimiento
@@ -3861,6 +3871,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 988902728609008736, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
   m_PrefabInstance: {fileID: 1417486560}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1417486566
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547628293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.83984673
+  m_Center: {x: 0, y: 0.94489133, z: 0}
 --- !u!1001 &1489443901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4505,7 +4528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988902728609008736, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.64
+      value: -31.58
       objectReference: {fileID: 0}
     - target: {fileID: 988902728609008736, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4513,7 +4536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988902728609008736, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.119995
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 988902728609008736, guid: 1a47c64f831b41d4ba0dcb8eb31a9c8b, type: 3}
       propertyPath: m_LocalRotation.w
