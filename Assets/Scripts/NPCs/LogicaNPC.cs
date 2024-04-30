@@ -9,6 +9,8 @@ using System;
 
 public class LogicaNPC : MonoBehaviour
 {
+    [SerializeField] private AudioClip starSound;
+    [SerializeField] private AudioClip hablarSonido;
     public GameObject simboloMision;
     public GameObject panelNPCStarConversation;
     public GameObject panelNPCConversation1;
@@ -43,6 +45,10 @@ public class LogicaNPC : MonoBehaviour
         panelNPCStarConversation.SetActive(false);
 
 
+    }
+    public void ButtonSound()
+    {
+        AudioManager.Instance.PlaySound(starSound);
     }
 
     // Update is called once per frame
@@ -94,6 +100,11 @@ public class LogicaNPC : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             panelFinishMision.SetActive(true);
             inventory.Cantidad = 0;
+        }
+
+        if (other.tag == "Player")
+        {
+            AudioManager.Instance.PlaySound(hablarSonido);
         }
 
     }

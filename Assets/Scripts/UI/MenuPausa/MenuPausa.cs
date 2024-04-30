@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
+    [SerializeField] private AudioClip starSound;
     public GameObject ObjetoMenuPausa;
     public TestController testController;
     public CameraController cameraController;
@@ -39,6 +40,11 @@ public class MenuPausa : MonoBehaviour
                 Resumir();
             }
         }
+    }
+
+    public void ButtonSound()
+    {
+        AudioManager.Instance.PlaySound(starSound);
     }
 
     public void Resumir()
