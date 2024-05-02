@@ -5,6 +5,8 @@ using TMPro;
 
 public class LogicaNPC2 : MonoBehaviour
 {
+    [SerializeField] private AudioClip starSound;
+    [SerializeField] private AudioClip hablarSonido;
     // Start is called before the first frame update
     public GameObject simboloMision;
     public GameObject panelNPCStarConversation;
@@ -45,6 +47,10 @@ public class LogicaNPC2 : MonoBehaviour
         panelNPCStarConversation.SetActive(false);
 
 
+    }
+    public void ButtonSound()
+    {
+        AudioManager.Instance.PlaySound(starSound);
     }
 
     // Update is called once per frame
@@ -90,6 +96,12 @@ public class LogicaNPC2 : MonoBehaviour
             {
                 panelNPCStarConversation.SetActive(true);
             }
+
+        }
+
+        if (other.tag == "Player")
+        {
+            AudioManager.Instance.PlaySound(hablarSonido);
         }
 
 
