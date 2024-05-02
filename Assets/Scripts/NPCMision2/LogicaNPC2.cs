@@ -12,6 +12,9 @@ public class LogicaNPC2 : MonoBehaviour
     public GameObject panelNPCConversation2;
     public GameObject panelNPCConversation3;
 
+    public GameObject keyCastle;
+    public HasKey hasKey;
+
 
     public GameObject panelNPCMision;
 
@@ -59,14 +62,19 @@ public class LogicaNPC2 : MonoBehaviour
             cameraController.rotationSpeed = 0;
         }
 
+        if (hasKey.key == true)
+        {
+            Destroy(DoorCastle);
+        }
+
         // if (inventory.Cantidad == 4 && PlayerFar == 1)
-        // {
-        //     panelCongratulationMision.SetActive(true);
-        //     for (int i = 0; i < PanelesMision1.Length; i++)
-        //     {
-        //         PanelesMision1[i].SetActive(false);
-        //     }
-        // }
+        //  {
+        //      panelCongratulationMision.SetActive(true);
+        //      for (int i = 0; i < PanelesMision1.Length; i++)
+        //      {
+        //          PanelesMision1[i].SetActive(false);
+        //      }
+        //  }
 
 
     }
@@ -83,6 +91,7 @@ public class LogicaNPC2 : MonoBehaviour
                 panelNPCStarConversation.SetActive(true);
             }
         }
+
 
         // if (inventory.Cantidad == 4 && other.tag == "Player")
         // {
@@ -154,6 +163,7 @@ public class LogicaNPC2 : MonoBehaviour
         timer.seg = 2;
         cameraController.distance = 2f;
         cameraController.framingOffset = new Vector2(0, 2);
+        keyCastle.SetActive(true);
         for (int i = 0; i < PanelesMision2.Length; i++)
         {
             PanelesMision2[i].SetActive(true);
