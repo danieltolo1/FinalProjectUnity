@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     // public TextMeshProUGUI textMeshTimer;
     public float timer = 0;
-    [SerializeField] int min, seg;
+    public int min, seg;
     [SerializeField] TextMeshProUGUI textMeshTimer;
 
     public GameObject PanelGameOver;

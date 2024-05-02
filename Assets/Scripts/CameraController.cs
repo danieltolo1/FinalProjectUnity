@@ -6,14 +6,14 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform followPlayer;
     [SerializeField] public float rotationSpeed = 2f;
-    [SerializeField] private float distance = 5;
+    public float distance = 5f;
     [SerializeField] public float rotationX;
     [SerializeField] public float rotationY;
     float invertXVal;
     float invertYVal;
     [SerializeField] private float minAngle = -20;
     [SerializeField] private float maxAngle = 45;
-    [SerializeField] Vector2 framingOffset;
+    public Vector2 framingOffset;
     [SerializeField] bool invertX;
     [SerializeField] bool invertY;
 
