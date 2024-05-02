@@ -459,6 +459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2277898512067638183}
   - component: {fileID: 3711172596959220880}
+  - component: {fileID: 2064750680}
   m_Layer: 0
   m_Name: PT_Female_Peasant_01_head
   m_TagString: Untagged
@@ -612,6 +613,27 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.5491697, y: 0.030975863, z: -0.0012190044}
     m_Extent: {x: 0.23573804, y: 0.18916379, z: 0.14052187}
   m_DirtyAABB: 0
+--- !u!95 &2064750680
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398880733569084421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47e8ee1b7c51ba34cb9158281370d1fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1634112225139303741
 GameObject:
   m_ObjectHideFlags: 0

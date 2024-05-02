@@ -7,8 +7,10 @@ public class Timer : MonoBehaviour
 {
     // public TextMeshProUGUI textMeshTimer;
     public float timer = 0;
-    [SerializeField] int min, seg;
+    public int min, seg;
     [SerializeField] TextMeshProUGUI textMeshTimer;
+
+    public GameObject PanelGameOver;
 
     private float restante;
     private bool enMarcha;
@@ -46,6 +48,6 @@ public class Timer : MonoBehaviour
 
     void gameOverPanelOn()
     {
-        Debug.Log("Game Over");
+        PanelGameOver.SetActive(true);
     }
 }

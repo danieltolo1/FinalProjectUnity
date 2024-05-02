@@ -4,19 +4,28 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Runtime.CompilerServices;
+using System;
 
 
 public class LogicaNPC : MonoBehaviour
 {
+    [SerializeField] private AudioClip starSound;
+    [SerializeField] private AudioClip hablarSonido;
     public GameObject simboloMision;
     public GameObject panelNPCStarConversation;
     public GameObject panelNPCConversation1;
     public GameObject panelNPCConversation2;
     public GameObject panelNPCConversation3;
+    public Inventory inventory;
+
+    int PlayerFar = 1;
+
     public GameObject panelNPCMision;
     public TextMeshProUGUI textoMision;
     public bool jugadorCerca;
     public bool aceptarMision;
+
+    public bool finalMision;
     public GameObject botonDeMision;
 
     public TestController testController;
@@ -24,13 +33,23 @@ public class LogicaNPC : MonoBehaviour
 
     public GameObject[] ObjetosMision1;
     public GameObject[] PanelesMision1;
+    public GameObject panelFinishMision;
+    public GameObject panelCongratulationMision;
+    public GameObject obstaculesBoxes;
+    public GameObject npcMision2;
 
     // Start is called before the first frame update
     void Start()
     {
-        //simboloMision.SetActive(true);
-        testController = GameObject.FindGameObjectWithTag("Payer").GetComponent<TestController>();
+        simboloMision.SetActive(true);
+        testController = GameObject.FindGameObjectWithTag("Player").GetComponent<TestController>();
         panelNPCStarConversation.SetActive(false);
+
+
+    }
+    public void ButtonSound()
+    {
+        AudioManager.Instance.PlaySound(starSound);
     }
 
     // Update is called once per frame
@@ -46,11 +65,18 @@ public class LogicaNPC : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             testController.speed = 0;
             cameraController.rotationSpeed = 0;
-
-
-            //testController.moveZ = 0;
-
         }
+
+        if (inventory.Cantidad == 4 && PlayerFar == 1)
+        {
+            panelCongratulationMision.SetActive(true);
+            for (int i = 0; i < PanelesMision1.Length; i++)
+            {
+                PanelesMision1[i].SetActive(false);
+            }
+        }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,13 +84,28 @@ public class LogicaNPC : MonoBehaviour
         if (other.tag == "Player")
         {
             jugadorCerca = true;
+            PlayerFar = 0;
 
             if (aceptarMision == false)
             {
                 panelNPCStarConversation.SetActive(true);
-
-
             }
+        }
+
+        if (inventory.Cantidad == 4 && other.tag == "Player")
+        {
+            panelCongratulationMision.SetActive(false);
+            npcMision2.SetActive(true);
+            jugadorCerca = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            panelFinishMision.SetActive(true);
+            inventory.Cantidad = 0;
+        }
+
+        if (other.tag == "Player")
+        {
+            AudioManager.Instance.PlaySound(hablarSonido);
         }
 
     }
@@ -73,6 +114,7 @@ public class LogicaNPC : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            PlayerFar = 1;
             jugadorCerca = false;
             panelNPCStarConversation.SetActive(false);
             panelNPCConversation1.SetActive(false);
@@ -109,16 +151,37 @@ public class LogicaNPC : MonoBehaviour
     public void SiOption()
     {
         panelNPCConversation3.SetActive(false);
+        panelNPCMision.SetActive(true);
         aceptarMision = true;
+
+
+
+    }
+
+    public void StartMision1()
+    {
+        panelNPCMision.SetActive(false);
         testController.speed = 4;
         cameraController.rotationSpeed = 1.5f;
-        for (int i = 0; i < ObjetosMision1.Length; i++)
-        {
-            ObjetosMision1[i].SetActive(true);
-        }
         for (int i = 0; i < PanelesMision1.Length; i++)
         {
             PanelesMision1[i].SetActive(true);
         }
+        for (int i = 0; i < ObjetosMision1.Length; i++)
+        {
+            ObjetosMision1[i].SetActive(true);
+        }
     }
+
+    public void FinishMision1()
+    {
+        panelFinishMision.SetActive(false);
+        simboloMision.SetActive(false);
+        obstaculesBoxes.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+
 }

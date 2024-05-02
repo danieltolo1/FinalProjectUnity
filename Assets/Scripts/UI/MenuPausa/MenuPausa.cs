@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
+    [SerializeField] private AudioClip starSound;
     public GameObject ObjetoMenuPausa;
+    public TestController testController;
+    public CameraController cameraController;
+
     public bool Pausa = false;
     // Start is called before the first frame update
     void Start()
@@ -25,12 +29,22 @@ public class MenuPausa : MonoBehaviour
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                testController.speed = 0;
+                cameraController.rotationSpeed = 0;
+                testController.gravityForce = 15;
+                testController.isOnGround = false;
+
             }
             else if (Pausa == true)
             {
                 Resumir();
             }
         }
+    }
+
+    public void ButtonSound()
+    {
+        AudioManager.Instance.PlaySound(starSound);
     }
 
     public void Resumir()
@@ -42,6 +56,8 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        testController.speed = 4;
+        cameraController.rotationSpeed = 1.5f;
     }
 
     public void goToMenu(string MenuName)
