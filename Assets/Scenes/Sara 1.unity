@@ -19993,19 +19993,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.21399352
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9768351
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20013,7 +20013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -155.287
       objectReference: {fileID: 0}
     - target: {fileID: 2366626167793625291, guid: 4a8143984b68fba4e85edf0a0091a6f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -38310,6 +38310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbe4d7a2209ccb47ab10ccd41608e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starSound: {fileID: 0}
+  hablarSonido: {fileID: 0}
   simboloMision: {fileID: 1188547523}
   panelNPCStarConversation: {fileID: 371463984}
   panelNPCConversation1: {fileID: 928582614}
