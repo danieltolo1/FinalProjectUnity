@@ -950,6 +950,8 @@ GameObject:
   - component: {fileID: 5721993849869978421}
   - component: {fileID: 259118607363654282}
   - component: {fileID: 4695317833406011000}
+  - component: {fileID: 1004844243}
+  - component: {fileID: 8335665281275020990}
   m_Layer: 0
   m_Name: NPC_Lowpoly_Armors_King
   m_TagString: Untagged
@@ -1048,6 +1050,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1004844243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054453734300538552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32831c73ac4897443849e4f6072900f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hablarSonido: {fileID: 8300000, guid: 694e37c80e7597e41920331c3a7733c3, type: 3}
+  velMov: 1
+  velRot: 40
+  tiempoReaccion: 8
+--- !u!135 &8335665281275020990
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054453734300538552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8510848
+  m_Center: {x: 0, y: 1.0307654, z: 0}
 --- !u!1 &2194424468283631291
 GameObject:
   m_ObjectHideFlags: 0
