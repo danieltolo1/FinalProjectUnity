@@ -8303,6 +8303,7 @@ MonoBehaviour:
   panelNPCConversation1: {fileID: 928582614}
   panelNPCConversation2: {fileID: 168024312}
   panelNPCConversation3: {fileID: 2112641013}
+  hasKey: {fileID: 1584094122}
   panelNPCMision: {fileID: 1653870731}
   jugadorCerca: 0
   aceptarMision: 0

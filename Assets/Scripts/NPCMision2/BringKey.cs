@@ -26,6 +26,8 @@ public class BringKey : MonoBehaviour
             panelTakeKey.SetActive(false);
             panelbringKey.SetActive(true);
         }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
