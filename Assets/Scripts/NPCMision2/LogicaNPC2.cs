@@ -11,6 +11,8 @@ public class LogicaNPC2 : MonoBehaviour
     public GameObject panelNPCConversation1;
     public GameObject panelNPCConversation2;
     public GameObject panelNPCConversation3;
+
+    public GameObject keyCastle;
     public HasKey hasKey;
 
 
@@ -161,6 +163,7 @@ public class LogicaNPC2 : MonoBehaviour
         timer.seg = 2;
         cameraController.distance = 2f;
         cameraController.framingOffset = new Vector2(0, 2);
+        keyCastle.SetActive(true);
         for (int i = 0; i < PanelesMision2.Length; i++)
         {
             PanelesMision2[i].SetActive(true);
