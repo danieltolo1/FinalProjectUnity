@@ -11,9 +11,14 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI textMeshTimer;
 
     public GameObject PanelGameOver;
+    public GameObject panelTimer;
+    public GameObject panelCounter;
 
     private float restante;
     private bool enMarcha;
+
+    public MenuGameOver menuGameOver;
+
 
 
     private void Awake()
@@ -46,8 +51,13 @@ public class Timer : MonoBehaviour
     }
 
 
+
+
     void gameOverPanelOn()
     {
         PanelGameOver.SetActive(true);
+        menuGameOver.gameOver = true;
+        panelCounter.SetActive(false);
+        panelTimer.SetActive(false);
     }
 }
