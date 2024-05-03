@@ -48,9 +48,16 @@ public class MenuGameOver : MonoBehaviour
         {
             SceneManager.LoadScene(ScenaStart);
         }
-        if (inventory.Cantidad >= 4)
+        else
         {
-            transform.position = new Vector3(-2.69510436f, 0.0500000119f, 88.7204285f);
+            player.transform.position = new Vector3(-2.69510436f, 0.0500000119f, 88.7204285f);
+            gameOver = false;
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            testController.speed = 4;
+            cameraController.rotationSpeed = 1.5f;
+
         }
     }
 
