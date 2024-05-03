@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             //Para que el audio perdure a los cambios de scena.
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
     }
 
