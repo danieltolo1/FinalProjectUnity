@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4503535, g: 0.5003732, b: 0.5752818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3463,32 +3463,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Player is a boy who wants to become a great knight. He spent years dreaming
-    of being the best knight ever, and finally one day, he decided to make his dream
-    come true.\r\nHe walked towards the center of the town, in search of reaching
-    the castle, but he found the bridge blocked by some boxes, and an adult fumbling
-    around them.\r\n\r\n\u201CWhat\u2019s the matter, sir?\u201D Asked Player\r\n\r\n\u201CI
-    have to deliver this boxes, boy, but our king sent some knights to check the
-    merchandise and they were so rude\u2026 threw everything out and didn\u2019t
-    even help me pack again\u201D\r\n\r\n\u201COh no! There\u2019s no way those were
-    knights, good sir! Knights are meant to be nice. I will be a knight soon, so
-    let me help you, please!\u201D\r\n\r\nAfter Player helped find and pack all the
-    merchandise back, the adult thanked them profusely.\r\n\r\n\u201CYou are a good
-    kid. Maybe you\u2019re what we need to fix this town!\u201D said the grown man
-    before leaving with the last of his boxes.\r\n\r\nPlayer continued walking forward.
-    His body grew, his mind became sharper and his abilities better. \r\n\u201CYou,
-    child\u201D He heard \r\n\u201CGood day sir, how can I help you?\u201D\r\n\u201CI\u2019ve
-    seen you around, you want to become a knight or so I\u2019ve heard\u201D\r\n\u201CThat\u2019s
-    right sir! I\u2019ll be a knight and help protect the people and our good king!\u201D\r\n\u201CHa!
-    Good king? That is but a joke. You kid are missing so much more than just training,
-    but if you\u2019re so sure, then please, complete this course in [time]. The
-    day you do, you will be almost ready to be one\u201D\r\n\r\nPlayer took the challenge
-    and, when completed, felt stronger, wiser and more capable than ever.\r\n\r\n\u201CYou\u2019ve
-    done it. You are an exceptional person. You are ready to be a knight. But let
-    me tell you young boy. Being a knight is not the job of a hero. I should know,
-    I used to be one. But go, young. You have my blessing if you still choose to
-    do so. Be better than I ever was\u201D \r\n\r\nAnd so, the old man gave Player
-    the key to enter the castle\r\n\r\nPlayer followed his way towards the castle"
+  m_text: "Waking up like every day, you decide today is the day you become a knight.\nIt
+    is your job to help everyone around you because who knows? You may find unexpected
+    support from your fellow townspeople! \nDo your best and complete the petitions
+    to rise as the best knight in your kingdom."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -3522,8 +3500,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7525,7 +7503,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335313334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 

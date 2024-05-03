@@ -10080,7 +10080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.3256226, y: -0.000091552734}
+  m_AnchoredPosition: {x: 1.3256226, y: -10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221795638
@@ -22910,7 +22910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: -0}
+  m_AnchoredPosition: {x: -164, y: -4}
   m_SizeDelta: {x: 1035.7996, y: 155.2773}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755651255
@@ -23125,7 +23125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.135986, y: 49.546234}
+  m_AnchoredPosition: {x: -17.135986, y: 39.54634}
   m_SizeDelta: {x: 1399.9641, y: 56.1849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &798922667
@@ -25803,8 +25803,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\rI can train you, but you will need a lot of courage and bravery.\nCan
-    you see the maze behind us?\n Do you want to train?"
+  m_text: "\rI can train you, but you will need a lot of courage and bravery. Can
+    you see the maze behind us?\nDo you want to train?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -46052,6 +46052,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: LogicaNPC, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3206852052810758532, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206852053130400755, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206852054588093888, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4019197343783879017, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
       propertyPath: m_Name
       value: CanvasGeneral
@@ -46140,10 +46152,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4019197344040850397, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
+      propertyPath: m_text
+      value: "Can you bring me the 4 tools that I\u2019m missing?"
+      objectReference: {fileID: 0}
     - target: {fileID: 4019197344133298231, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 887094348}
+    - target: {fileID: 4019197344538043584, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4019197344752735865, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
       propertyPath: m_text
       value: "I have to deliver this boxes, boy, but our king sent some knights to
