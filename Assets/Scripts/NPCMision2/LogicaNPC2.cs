@@ -7,6 +7,7 @@ public class LogicaNPC2 : MonoBehaviour
 {
     [SerializeField] private AudioClip starSound;
     [SerializeField] private AudioClip hablarSonido;
+    [SerializeField] private AudioClip tiempo;
     // Start is called before the first frame update
     public GameObject simboloMision;
     public GameObject panelNPCStarConversation;
@@ -176,6 +177,7 @@ public class LogicaNPC2 : MonoBehaviour
         cameraController.distance = 2f;
         cameraController.framingOffset = new Vector2(0, 2);
         keyCastle.SetActive(true);
+        AudioManager.Instance.PlaySound(tiempo);
         for (int i = 0; i < PanelesMision2.Length; i++)
         {
             PanelesMision2[i].SetActive(true);
