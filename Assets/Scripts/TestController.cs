@@ -83,15 +83,6 @@ public class TestController : MonoBehaviour
         playerRb.velocity = velocity;
     }
 
-
-
-
-
-
-
-
-
-
     public bool IsGrounded()
     {
         //return Physics.BoxCast(transform.position, new Vector3(0.4f, 0f, 0.4f), Vector3.down, Quaternion.identity, distanceToGround + 0.1f);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovimientoNpcs : MonoBehaviour
 {
+    [SerializeField] private AudioClip hablarSonido;
     public float velMov, velRot;
 
     public float tiempoReaccion = 0.8f; 
@@ -59,6 +60,17 @@ public class MovimientoNpcs : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         gira = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+    
+
+        if (other.tag == "Player")
+        {
+            AudioManager.Instance.PlaySound(hablarSonido);
+        }
+
     }
 
 }
