@@ -64,4 +64,10 @@ public class MenuPausa : MonoBehaviour
     {
         SceneManager.LoadScene(MenuName);
     }
+
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 }
