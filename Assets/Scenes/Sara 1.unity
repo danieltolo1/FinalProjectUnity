@@ -10103,7 +10103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You have finished the mission, now go talk to the peasant.
+  m_text: You completed the mission, now return the objects to the peasant.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -10234,6 +10234,10 @@ PrefabInstance:
     - target: {fileID: 8111370199211988245, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
       propertyPath: m_Name
       value: Shiny Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111370199211988247, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
@@ -15473,8 +15477,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To be a knight you must cross the labyrinth. First find the key that opens
-    the castle doors and then you must enter before time runs out.
+  m_text: To be a knight you must cross the labyrinth. Find the key that opens the
+    castle doors and enter before time runs out.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -22723,8 +22727,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now i can bring the boxes of the bridge, my friend are waitng you in the
-    maze entrance
+  m_text: Thank you! I can finally move my boxes. My friend will be waiting for you
+    at the maze entrance.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -22860,6 +22864,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8111370199211988247, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.31
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
 --- !u!4 &714030818 stripped
@@ -22925,8 +22933,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Need to Find the 4 Objects there are in the town before the time finish...
-    if you can help me, I will tell my friend that he will train you like "knight"
+  m_text: You need to find 4 objects scattered around town before time's up... if
+    you help me I'll ask my friend to train you like a real knight.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -23140,7 +23148,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"CONGRATULATION\" \n"
+  m_text: 'CONGRATULATIONS
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -23328,8 +23338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Door Castle is now open, Run and Across the entry Before the time runs
-    over
+  m_text: The door castle is now open, enter before time runs out
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -23712,8 +23721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello boy, my friend told me that you want to be a knight... is this true
-    ?
+  m_text: Hello boy, my friend told me that you want to be a knight... is this true?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -31884,6 +31892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shiny Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 8111370199211988247, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.31
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
 --- !u!1001 &1489443901
@@ -37580,6 +37592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shiny Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 8111370199211988247, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 991b5c5418de86042a3370c820447ba2, type: 3}
 --- !u!1001 &1747952946
@@ -38021,8 +38037,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now i can bring the boxes of the bridge, my friend are waitng you in the
-    maze entrance
+  m_text: Thank you! I can finally move my boxes. My friend will be waiting for you
+    at the maze entrance.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
   m_sharedMaterial: {fileID: -3158360289422775171, guid: 9c37d03f783ea8f4c9bffcdb21042991, type: 2}
@@ -46128,6 +46144,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 887094348}
+    - target: {fileID: 4019197344752735865, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
+      propertyPath: m_text
+      value: "I have to deliver this boxes, boy, but our king sent some knights to
+        check the merchandise and they were so rude\u2026 threw everything out and
+        didn\u2019t even help me pack again"
+      objectReference: {fileID: 0}
     - target: {fileID: 4019197344786237176, guid: 0f6bfd95ea5ddae4296b603b3b6d1de7, type: 3}
       propertyPath: m_IsActive
       value: 1
