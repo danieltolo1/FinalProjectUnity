@@ -41,9 +41,20 @@ public class PlayerController : MonoBehaviour
    
     private void FixedUpdate() 
     {
-        MoveControl();  
+        MoveControl();
         Jumping();
-        AnimControl();             
+        Attacking();
+        AnimControl();                                
+    }
+
+    private void Attacking()
+    {
+
+      if(Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("hit");            
+        }
+
     }
 
     private void MoveControl()
